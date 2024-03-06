@@ -3,17 +3,16 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
-import java.time.LocalDate;
 
 @Entity
 public class Actividade extends Model {
 
     private String titulo;
     private String descricao;
-    private LocalDate data;
+    private String data;
     private String estado;
 
-    public Actividade(String titulo, String descricao, LocalDate data, String estado) {
+    public Actividade(String titulo, String descricao, String data, String estado) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;
@@ -36,11 +35,11 @@ public class Actividade extends Model {
         this.descricao = descricao;
     }
 
-    public LocalDate getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    public void setData(String data) {
         this.data = data;
     }
 

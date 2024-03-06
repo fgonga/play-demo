@@ -17,16 +17,23 @@
         <th>Descrição</th>
         <th>Data</th>
         <th>Estado</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
+    #{list items: actividades, as: 'actividade'}
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>${actividade.getId()}</td>
+        <td>${actividade?.getTitulo()}</td>
+        <td>${actividade?.getDescricao()}</td>
+        <td>${actividade?.getData()}</td>
+        <td>${actividade?.getEstado()}</td>
+        <td>
+            <a href="" class="btn btn-warning"><i class="fas fa-list"></i> Detalhes</a>
+            <a href="" class="btn btn-primary"><i class="fas fa-edit"></i> Editar</a>
+        </td>
     </tr>
+    #{/list}
     </tbody>
 </table>
     </div>
