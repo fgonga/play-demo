@@ -13,12 +13,21 @@ public class Actividades extends Controller {
 render(actividades);
     }
 
-    public static void create(){
-render();
+    public static void create(long id){
+        Actividade actividade = Actividade.findById(id);
+render(actividade);
     }
 
-    public static void store(String titulo, String data, String estado, String descricao){
-        Actividade actividade = new Actividade(titulo, descricao, data, estado);
+    public static void store(long id, String titulo, String data, String estado, String descricao) {
+        Actividade actividade = Actividade.findById(id);
+        if (actividade == null){
+             actividade = new Actividade(titulo, descricao, data, estado);
+        }else{
+            actividade.setTitulo(titulo);
+            actividade.setDescricao(descricao);
+            actividade.setData(data);
+            actividade.setEstado(estado);
+        }
         actividade.save();
 
         index();
