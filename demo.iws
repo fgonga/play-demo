@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be4d1c45-16db-45d4-890d-e2d080025e23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/controllers/Actividades.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Actividades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Actividades/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Actividades/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Actividades/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Actividades/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1709725869397</updated>
       <workItem from="1709725870909" duration="144000" />
-      <workItem from="1709726045226" duration="2502000" />
+      <workItem from="1709726045226" duration="3737000" />
     </task>
     <servers />
   </component>

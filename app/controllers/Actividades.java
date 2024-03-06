@@ -9,7 +9,7 @@ render();
     }
 
     public static void create(){
-
+render();
     }
 
     public static void store(){

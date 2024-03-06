@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+#{extends 'main.html'/}
+#{set title:'Nova Actividade'/}
 
-</body>
-</html>
+<div class="container">
+    <div class="operacao d-flex justify-content-between align-item-center mb-2">
+        <h3>Nova Actividade</h3>
+        <a href="@{Actividades.index}" class="btn btn-success">
+            <i class="fas fa-search"></i> Listar Actividades
+        </a>
+    </div>
+    <div class="form">
+        <form action="@{Actividades.store}" method="post">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <label for="titulo">Título <span class="text-danger">*</span></label>
+                    <input type="text" name="titulo" class="form-control" placeholder="Título da Tarefa"/>
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <label for="data">Data <span class="text-danger">*</span></label>
+                    <input type="date" name="data" class="form-control" placeholder="Data"/>
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <label for="estado">Estado <span class="text-danger">*</span></label>
+                    <select name="estado" class="form-control">
+                        <option value="" hidden>Estado</option>
+                        <option value="Concluída">Concluída</option>
+                        <option value="Não Concluída">Não Concluída</option>
+                    </select>
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <label for="descricao">Descrição <span class="text-danger">*</span></label>
+                    <textarea name="descricao" id="" cols="30" rows="5" class="form-control" placeholder="Descrição"></textarea>
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="reset" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
