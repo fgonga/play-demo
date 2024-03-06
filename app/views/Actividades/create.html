@@ -26,6 +26,17 @@
                 </div>
 
                 <div class="col-md-12 mb-2">
+                    <label for="categorias">Categoria <span class="text-danger">*</span></label>
+                    <select name="estado" class="form-control">
+                        <option value="" hidden>Categoria</option>
+                        #{list items:categorias, as:'categoria'}
+                        <option value="${categoria?.id}">${categoria?.getCategoria()}</option>
+                        #{/list}
+                    </select>
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
                     <label for="estado">Estado <span class="text-danger">*</span></label>
                     <select name="estado" class="form-control">
                         <option value="${actividade?.getEstado()}" hidden>${actividade?.getEstado()}</option>
@@ -37,7 +48,7 @@
 
                 <div class="col-md-12 mb-2">
                     <label for="descricao">Descrição <span class="text-danger">*</span></label>
-                    <textarea name="descricao" id="" cols="30" rows="5" class="form-control" placeholder="Descrição">${actividade.getDescricao()}</textarea>
+                    <textarea name="descricao" id="" cols="30" rows="5" class="form-control" placeholder="Descrição">${actividade?.getDescricao()}</textarea>
                     <span class="text-danger"></span>
                 </div>
 
