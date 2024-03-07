@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ public class Actividade extends Model {
     private Categoria categoria;
 
     public Actividade(String titulo, String descricao, String data, String estado, Categoria categoria) {
+
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;

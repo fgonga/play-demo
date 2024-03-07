@@ -2,9 +2,9 @@ package controllers;
 
 import models.Actividade;
 import models.Categoria;
+import play.data.validation.Required;
 import play.mvc.Controller;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public class Actividades extends Controller {
@@ -28,7 +28,19 @@ public class Actividades extends Controller {
         render(actividade, categorias);
     }
 
-    public static void store(long id, String titulo, String data, String estado, String descricao, Long categoria) {
+    public static void store(long id, @Required String titulo,
+                             @Required String data,
+                             @Required String estado,
+                             @Required String descricao,
+                             @Required Long categoria) {
+
+        //validacao de formulario
+        if(validation.hasErrors()){
+            params.flash();
+            validation.keep();
+            create(0);
+        }
+
         Actividade actividade = Actividade.findById(id);
         Categoria categoriaModel = Categoria.findById(categoria);
         if (categoriaModel == null) {

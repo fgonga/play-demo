@@ -16,13 +16,13 @@
                 <div class="col-md-12 mb-2">
                     <label for="titulo">Título da Actividade <span class="text-danger">*</span></label>
                     <input type="text" name="titulo" class="form-control" placeholder="Título da Actividade" value="${actividade?.getTitulo()}"/>
-                    <span class="text-danger"></span>
+                    <span class="text-danger">#{error 'titulo'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">
                     <label for="data">Data <span class="text-danger">*</span></label>
                     <input type="date" name="data" class="form-control" placeholder="Data" value="${actividade?.getData()}"/>
-                    <span class="text-danger"></span>
+                    <span class="text-danger">#{error 'data'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">
@@ -33,7 +33,7 @@
                         <option value="${categoria?.id}" #{if categoria?.id==actividade?.getCategoria()?.id} selected #{/if}>${categoria?.getCategoria()}</option>
                         #{/list}
                     </select>
-                    <span class="text-danger"></span>
+                    <span class="text-danger">#{error 'categoria'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">
@@ -43,13 +43,13 @@
                         <option value="Concluída" #{if actividade?.estado=="Concluída"} selected #{/if}>Concluída</option>
                         <option value="Não Concluída" #{if actividade?.estado == "Não Concluída"} selected #{/if}>Não Concluída</option>
                     </select>
-                    <span class="text-danger"></span>
+                    <span class="text-danger">#{error 'estado'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">
                     <label for="descricao">Descrição <span class="text-danger">*</span></label>
                     <textarea name="descricao" id="" cols="30" rows="5" class="form-control" placeholder="Descrição">${actividade?.getDescricao()}</textarea>
-                    <span class="text-danger"></span>
+                    <span class="text-danger">#{error 'descricao'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">

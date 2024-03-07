@@ -1,5 +1,7 @@
 package models;
 
+import net.sf.oval.configuration.annotation.Constraints;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.CascadeType;

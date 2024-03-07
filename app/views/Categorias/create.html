@@ -2,6 +2,7 @@
 #{set title:'Nova Actividade'/}
 
 <div class="container">
+
     <div class="operacao d-flex justify-content-between align-item-center mb-2">
         <h3>Nova Categoria</h3>
         <a href="@{Categorias.index}" class="btn btn-success">
@@ -17,7 +18,8 @@
                     <label for="categoria">Categoria <span class="text-danger">*</span></label>
                     <input type="text" name="categoria" class="form-control" placeholder="Categoria"
                            value="${categoria?.getCategoria()}"/>
-                    <span class="text-danger"></span>
+
+                    <span class="text-danger">#{error 'categoria' /}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">

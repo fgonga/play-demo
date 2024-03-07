@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Categoria;
+import play.data.validation.Required;
 import play.mvc.Controller;
 
 import java.util.List;
@@ -17,7 +18,15 @@ public class Categorias extends Controller {
         render(categoria);
     }
 
-    public static void store(long id, String categoria) {
+    public static void store(long id, @Required String categoria) {
+
+        //validacao de formulario
+        if(validation.hasErrors()) {
+            params.flash();
+            validation.keep();
+           create(0);
+        }
+
         Categoria categoriaModel = Categoria.findById(id);
         if (categoriaModel == null) {
             categoriaModel = new Categoria(categoria);
