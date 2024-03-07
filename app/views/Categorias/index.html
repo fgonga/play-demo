@@ -2,8 +2,11 @@
 #{set title:'Categorias Cadastradas'/}
 
 <div class="container">
-    <div class="operacao">
+    <div class="operacao d-flex justify-content-between align-item-center mb-2">
         <h3>Categorias Cadastradas</h3>
+        <a href="@{Categorias.create}" class="btn btn-success">
+            <i class="fas fa-circle-plus"></i> Nova Categoria
+        </a>
     </div>
     <div class="table-responsive">
         <table class="table table-striped">
@@ -11,6 +14,7 @@
             <tr>
                 <th>#</th>
                 <th>Categoria</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -18,6 +22,11 @@
             <tr>
                 <td>${categoria_index}</td>
                 <td>${categoria?.getCategoria()}</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-list"></i> Detalhes</a>
+                    <a href="@{Categorias.create(categoria?.id)}" class="btn btn-primary"><i class="fas fa-edit"></i>
+                        Editar</a>
+                </td>
             </tr>
             #{/list}
             </tbody>

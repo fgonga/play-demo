@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="col-md-12 mb-2">
-                    <label for="categorias">Categoria <span class="text-danger">*</span></label>
-                    <select name="estado" class="form-control">
+                    <label for="categoria">Categoria <span class="text-danger">*</span></label>
+                    <select name="categoria" class="form-control">
                         <option value="" hidden>Categoria</option>
                         #{list items:categorias, as:'categoria'}
                         <option value="${categoria?.id}">${categoria?.getCategoria()}</option>

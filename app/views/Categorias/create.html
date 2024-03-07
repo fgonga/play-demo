@@ -1,0 +1,31 @@
+#{extends 'main.html'/}
+#{set title:'Nova Actividade'/}
+
+<div class="container">
+    <div class="operacao d-flex justify-content-between align-item-center mb-2">
+        <h3>Nova Categoria</h3>
+        <a href="@{Categorias.index}" class="btn btn-success">
+            <i class="fas fa-search"></i> Listar Categorias
+        </a>
+    </div>
+    <h4>${categoria?.getCategoria()}</h4>
+    <div class="form">
+        <form action="@{Categorias.store}" method="post">
+            <input type="hidden" name="id" value="${categoria?.id}">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <label for="categoria">Categoria <span class="text-danger">*</span></label>
+                    <input type="text" name="categoria" class="form-control" placeholder="Categoria"
+                           value="${categoria?.getCategoria()}"/>
+                    <span class="text-danger"></span>
+                </div>
+
+                <div class="col-md-12 mb-2">
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="reset" class="btn btn-danger">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

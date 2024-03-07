@@ -10,8 +10,8 @@ import java.util.List;
 public class Categoria extends Model {
     private String categoria;
 
-    @OneToMany
-    private List<Categoria> categorias;
+    @OneToMany(mappedBy = "categoria")
+    private List<Actividade> actividades;
 
     public Categoria(String categoria) {
         this.categoria = categoria;
@@ -23,5 +23,13 @@ public class Categoria extends Model {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public List<Actividade> getActividades() {
+        return actividades;
+    }
+
+    public void setActividades(List<Actividade> actividades) {
+        this.actividades = actividades;
     }
 }

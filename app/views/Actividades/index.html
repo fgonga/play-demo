@@ -5,36 +5,37 @@
     <div class="operacao d-flex justify-content-between align-item-center mb-2">
         <h3>Actividades Cadastradas</h3>
         <a href="@{Actividades.create}" class="btn btn-success">
-          <i class="fas fa-circle-plus"></i> Nova Actividade
+            <i class="fas fa-circle-plus"></i> Nova Actividade
         </a>
     </div>
     <div class="table-responsive">
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>#</th>
-        <th>Titulo</th>
-        <th>Descrição</th>
-        <th>Data</th>
-        <th>Estado</th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    #{list items: actividades, as: 'actividade'}
-    <tr>
-        <td>${actividade_index}</td>
-        <td>${actividade?.getTitulo()}</td>
-        <td>${actividade?.getDescricao()}</td>
-        <td>${actividade?.getData()}</td>
-        <td>${actividade?.getEstado()}</td>
-        <td>
-            <a href="" class="btn btn-warning"><i class="fas fa-list"></i> Detalhes</a>
-            <a href="@{Actividades.create(actividade?.id)}" class="btn btn-primary"><i class="fas fa-edit"></i> Editar</a>
-        </td>
-    </tr>
-    #{/list}
-    </tbody>
-</table>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Titulo</th>
+                <th>Descrição</th>
+                <th>Data</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            #{list items: actividades, as: 'actividade'}
+            <tr>
+                <td>${actividade_index}</td>
+                <td>${actividade?.getTitulo()}</td>
+                <td>${actividade?.getDescricao()}</td>
+                <td>${actividade?.getData()}</td>
+                <td>${actividade?.getEstado()}</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-list"></i> Detalhes</a>
+                    <a href="@{Actividades.create(actividade?.id)}" class="btn btn-primary"><i class="fas fa-edit"></i>
+                        Editar</a>
+                </td>
+            </tr>
+            #{/list}
+            </tbody>
+        </table>
     </div>
 </div>
