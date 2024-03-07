@@ -23,12 +23,19 @@
         <div class="col-md-2">
             <h5 class="card-title mb-2">Categorias</h5>
             <ul class="list-group">
-                #{list items:categorias, as:'categoria'}
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a href="@{Actividades.index(categoria?.id)}">${categoria.categoria}</a>
-                    <span class="badge bg-primary rounded-pill">14</span>
-                </li>
-                #{/list}
+             
+                <a href="@{Actividades.index(0)}"
+                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    Todas
+                    <span class="badge bg-primary rounded-pill">${countActividades}</span>
+                </a>
+            #{list items:categorias, as:'categoria'}
+                <a href="@{Actividades.index(categoria?.id)}"
+                   class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                ${categoria.categoria}
+                    <span class="badge bg-primary rounded-pill">${categoria.getActividades().size()}</span>
+                </a>
+            #{/list}
             </ul>
         </div>
         <div class="col-md-10">

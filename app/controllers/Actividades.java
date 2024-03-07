@@ -10,17 +10,15 @@ import java.util.List;
 public class Actividades extends Controller {
 
     public static void index(long id) {
-        List<Actividade> actividades;
-
+        List<Categoria> categorias = Categoria.findAll();
         Categoria categoria = Categoria.findById(id);
-        if (categoria == null) {
-            actividades = Actividade.findAll();
-        } else {
+        long countActividades = categorias.size();
+        List<Actividade> actividades = Actividade.findAll();
+        if (categoria != null) {
             actividades = Actividade.find("categoria.id = ?1", id).fetch();
         }
 
-        List<Categoria> categorias = Categoria.findAll();
-        render(actividades, categorias);
+        render(actividades, categorias, countActividades);
 
     }
 
