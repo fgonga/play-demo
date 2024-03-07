@@ -17,7 +17,7 @@
                 <div class="col-md-12 mb-2">
                     <label for="categoria">Categoria <span class="text-danger">*</span></label>
                     <input type="text" name="categoria" class="form-control" placeholder="Categoria"
-                           value="${categoria?.getCategoria()}"/>
+                           value="${categoria?.getCategoria()?:flash.categoria}"/>
 
                     <span class="text-danger">#{error 'categoria' /}</span>
                 </div>
