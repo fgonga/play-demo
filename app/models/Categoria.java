@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 public class Categoria extends Model {
+
     private String categoria;
 
     @OneToMany(mappedBy = "categoria")

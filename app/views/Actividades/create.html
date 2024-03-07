@@ -30,7 +30,7 @@
                     <select name="categoria" class="form-control">
                         <option value="" hidden>Categoria</option>
                         #{list items:categorias, as:'categoria'}
-                        <option value="${categoria?.id}">${categoria?.getCategoria()}</option>
+                        <option value="${categoria?.id}" #{if categoria?.id==actividade?.getCategoria()?.id} selected #{/if}>${categoria?.getCategoria()}</option>
                         #{/list}
                     </select>
                     <span class="text-danger"></span>
@@ -39,9 +39,9 @@
                 <div class="col-md-12 mb-2">
                     <label for="estado">Estado <span class="text-danger">*</span></label>
                     <select name="estado" class="form-control">
-                        <option value="${actividade?.getEstado()}" hidden>${actividade?.getEstado()}</option>
-                        <option value="Concluída">Concluída</option>
-                        <option value="Não Concluída">Não Concluída</option>
+                        <option value="" hidden>Estado</option>
+                        <option value="Concluída" #{if actividade?.estado=="Concluída"} selected #{/if}>Concluída</option>
+                        <option value="Não Concluída" #{if actividade?.estado == "Não Concluída"} selected #{/if}>Não Concluída</option>
                     </select>
                     <span class="text-danger"></span>
                 </div>
