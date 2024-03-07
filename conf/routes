@@ -11,5 +11,17 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+#Actividades
+GET     /actividades/                           Actividades.index
+GET     /actividades/create/{id}                Actividades.create
+POST   /actividades/store                       Actividades.store
+
+
+#Categorias
+GET     /categorias/                            Categorias.index
+GET     /categorias/create/{id}                 Categorias.create
+POST    /categorias/store                       Categorias.store
+
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
