@@ -20,21 +20,23 @@ render(actividades);
 render(actividade, categorias);
     }
 
-    public static void store(long id, String titulo, String data, String estado, String descricao, Categoria categoria) {
+    public static void store(long id, String titulo, String data, String estado, String descricao, Long categoria) {
         Actividade actividade = Actividade.findById(id);
-        if (actividade == null){
-             actividade = new Actividade(titulo, descricao, data, estado, categoria);
+        Categoria categoriaModel = Categoria.findById(categoria);
+        if(categoriaModel==null){
+
         }else{
-            actividade.setTitulo(titulo);
-            actividade.setDescricao(descricao);
-            actividade.setCategoria(categoria);
-            actividade.setData(data);
-            actividade.setEstado(estado);
+            if (actividade == null){
+                actividade = new Actividade(titulo, descricao, data, estado, categoriaModel);
+            }else{
+                actividade.setTitulo(titulo);
+                actividade.setDescricao(descricao);
+                actividade.setCategoria(categoriaModel);
+                actividade.setData(data);
+                actividade.setEstado(estado);
+            }
+            actividade.save();
         }
-        System.out.println(actividade);
-        actividade.save();
-
-
 
         index();
     }

@@ -14,6 +14,7 @@
             <tr>
                 <th>#</th>
                 <th>Titulo</th>
+                <th>Categoria</th>
                 <th>Descrição</th>
                 <th>Data</th>
                 <th>Estado</th>
@@ -25,6 +26,7 @@
             <tr>
                 <td>${actividade_index}</td>
                 <td>${actividade?.getTitulo()}</td>
+                <td>${actividade?.getCategoria()?.categoria}</td>
                 <td>${actividade?.getDescricao()}</td>
                 <td>${actividade?.getData()}</td>
                 <td>${actividade?.getEstado()}</td>
