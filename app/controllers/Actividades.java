@@ -12,8 +12,8 @@ public class Actividades extends Controller {
     public static void index(long id) {
         List<Categoria> categorias = Categoria.findAll();
         Categoria categoria = Categoria.findById(id);
-        long countActividades = categorias.size();
         List<Actividade> actividades = Actividade.findAll();
+        long countActividades = actividades.size();
         if (categoria != null) {
             actividades = Actividade.find("categoria.id = ?1", id).fetch();
         }

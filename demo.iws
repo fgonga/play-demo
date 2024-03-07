@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4d1c45-16db-45d4-890d-e2d080025e23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/Actividades/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Actividades/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Actividades.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Actividades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/messages" beforeDir="false" afterPath="$PROJECT_DIR$/conf/messages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iws" afterDir="false" />
     </list>
@@ -37,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/demo.ipr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/conf" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,6 +46,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tenda Digital\Documents\Workspace\play-demo\conf" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -59,7 +65,7 @@
       <workItem from="1709725870909" duration="144000" />
       <workItem from="1709726045226" duration="15171000" />
       <workItem from="1709795805468" duration="964000" />
-      <workItem from="1709796806959" duration="19419000" />
+      <workItem from="1709796806959" duration="20939000" />
     </task>
     <servers />
   </component>
