@@ -9,9 +9,19 @@ import java.util.List;
 
 public class Actividades extends Controller {
 
-    public static void index() {
-        List<Actividade> actividades = Actividade.findAll();
-        render(actividades);
+    public static void index(long id) {
+        List<Actividade> actividades;
+
+        Categoria categoria = Categoria.findById(id);
+        if (categoria == null) {
+            actividades = Actividade.findAll();
+        } else {
+            actividades = Actividade.find("categoria.id = ?1", id).fetch();
+        }
+
+        List<Categoria> categorias = Categoria.findAll();
+        render(actividades, categorias);
+
     }
 
     public static void create(long id) {
@@ -41,7 +51,7 @@ public class Actividades extends Controller {
             } else {
                 flash.put("error", "Não salvou a actividade");
             }
-            index();
+            index(0);
         }
 
 
@@ -55,6 +65,6 @@ public class Actividades extends Controller {
             flash.put("success", "Actividade eliminada com sucesso");
         }
 
-        index();
+        index(0);
     }
 }
