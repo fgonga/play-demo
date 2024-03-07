@@ -2,6 +2,7 @@ package models;
 
 import play.db.jpa.Model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Categoria extends Model {
 
     private String categoria;
 
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
     private List<Actividade> actividades;
 
     public Categoria(String categoria) {

@@ -8,6 +8,15 @@
             <i class="fas fa-circle-plus"></i> Nova Categoria
         </a>
     </div>
+    <div class="messages mb-3">
+    #{if flash.error}
+        <div class="alert alert-danger">${flash?.error}</div>
+    #{/if}
+
+    #{if flash.success}
+        <div class="alert alert-success">${flash?.success}</div>
+    #{/if}
+    </div>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -23,9 +32,10 @@
                 <td>${categoria_index}</td>
                 <td>${categoria?.getCategoria()}</td>
                 <td>
-                    <a href="" class="btn btn-warning"><i class="fas fa-list"></i> Detalhes</a>
                     <a href="@{Categorias.create(categoria?.id)}" class="btn btn-primary"><i class="fas fa-edit"></i>
                         Editar</a>
+                    <a href="@{Categorias.delete(categoria?.id)}" class="btn btn-danger"><i class="fas fa-trash"></i>
+                        Eliminar</a>
                 </td>
             </tr>
             #{/list}

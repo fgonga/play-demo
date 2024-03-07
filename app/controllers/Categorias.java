@@ -25,7 +25,21 @@ public class Categorias extends Controller {
             categoriaModel.setCategoria(categoria);
         }
 
-        categoriaModel.save();
+        if(categoriaModel.validateAndSave()){
+            flash.put("success", "Feito com sucesso");
+        }else{
+            flash.put("error", "Erro ao salvar actividade");
+        }
+
+        index();
+    }
+
+    public static void delete(long id) {
+        Categoria categoria = Categoria.findById(id);
+        if(categoria!=null){
+            categoria.delete();
+            flash.put("success", "Categoria eliminada com sucesso");
+        }
 
         index();
     }

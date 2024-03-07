@@ -35,7 +35,24 @@ public class Actividades extends Controller {
                 actividade.setData(data);
                 actividade.setEstado(estado);
             }
-            actividade.save();
+
+            if (actividade.validateAndSave()) {
+                flash.put("success", "Feito com sucesso");
+            } else {
+                flash.put("error", "Não salvou a actividade");
+            }
+            index();
+        }
+
+
+    }
+
+    public static void delete(long id) {
+        Actividade actividade = Actividade.findById(id);
+
+        if (actividade != null) {
+            actividade.delete();
+            flash.put("success", "Actividade eliminada com sucesso");
         }
 
         index();
