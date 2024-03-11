@@ -13,9 +13,9 @@ GET     /public/                                staticDir:public
 
 #Actividades
 GET     /actividades/                           Actividades.index
-GET     /actividades/create/{id}                Actividades.create
+GET     /actividades/create                     Actividades.create
 POST   /actividades/store                       Actividades.store
-
+GET    /actividades/{id}/edit                   Actividades.edit
 
 #Categorias
 GET     /categorias/                            Categorias.index

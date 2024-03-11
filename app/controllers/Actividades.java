@@ -22,48 +22,44 @@ public class Actividades extends Controller {
 
     }
 
-    public static void create(long id) {
-        Actividade actividade = Actividade.findById(id);
+    public static void create() {
         List<Categoria> categorias = Categoria.findAll();
-        render(actividade, categorias);
+        render(categorias);
     }
 
-    public static void store(long id, @Required String titulo,
+    public static void store(@Required String titulo,
                              @Required String data,
                              @Required String estado,
                              @Required String descricao,
                              @Required Long categoria) {
 
         //validacao de formulario
-        if(validation.hasErrors()){
+        if (validation.hasErrors()) {
             params.flash();
             validation.keep();
-            create(0);
+            create();
         }
 
-        Actividade actividade = Actividade.findById(id);
         Categoria categoriaModel = Categoria.findById(categoria);
-        if (categoriaModel == null) {
 
+        Actividade actividade = new Actividade(titulo, descricao, data, estado, categoriaModel);
+
+        if (actividade.validateAndSave()) {
+            flash.put("success", "Feito com sucesso");
         } else {
-            if (actividade == null) {
-                actividade = new Actividade(titulo, descricao, data, estado, categoriaModel);
-            } else {
-                actividade.setTitulo(titulo);
-                actividade.setDescricao(descricao);
-                actividade.setCategoria(categoriaModel);
-                actividade.setData(data);
-                actividade.setEstado(estado);
-            }
-
-            if (actividade.validateAndSave()) {
-                flash.put("success", "Feito com sucesso");
-            } else {
-                flash.put("error", "Não salvou a actividade");
-            }
-            index(0);
+            flash.put("error", "Não salvou a actividade");
         }
+        index(0);
 
+    }
+
+    public static void edit(long id) {
+        Actividade actividade = Actividade.findById(id);
+        List<Categoria> categorias = Categoria.findAll();
+        render(actividade, categorias);
+    }
+
+    public static void update(long id) {
 
     }
 

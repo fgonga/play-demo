@@ -1,26 +1,27 @@
 #{extends 'main.html'/}
-#{set title:'Nova Actividade'/}
+#{set title:'Editar Actividade'/}
 
 <div class="container">
     <div class="operacao d-flex justify-content-between align-item-center mb-2">
-        <h3>Nova Actividade</h3>
+        <h3>Editar Actividade</h3>
         <a href="@{Actividades.index}" class="btn btn-success">
             <i class="fas fa-search"></i> Listar Actividades
         </a>
     </div>
+    <h4>${actividade?.getTitulo()}</h4>
     <div class="form">
-        <form action="@{Actividades.store}" method="post">
+        <form action="@{Actividades.update}" method="post">
             <input type="hidden" name="id" value="${actividade?.id}">
             <div class="row">
                 <div class="col-md-12 mb-2">
                     <label for="titulo">Título da Actividade <span class="text-danger">*</span></label>
-                    <input type="text" name="titulo" class="form-control" placeholder="Título da Actividade" value="${flash.titulo}"/>
+                    <input type="text" name="titulo" class="form-control" placeholder="Título da Actividade" value="${actividade?.getTitulo() ?: flash.titulo}"/>
                     <span class="text-danger">#{error 'titulo'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">
                     <label for="data">Data <span class="text-danger">*</span></label>
-                    <input type="date" name="data" class="form-control" placeholder="Data" value="${flash.data}"/>
+                    <input type="date" name="data" class="form-control" placeholder="Data" value="${actividade?.getData() ?: flash.data}"/>
                     <span class="text-danger">#{error 'data'/}</span>
                 </div>
 
@@ -28,9 +29,9 @@
                     <label for="categoria">Categoria <span class="text-danger">*</span></label>
                     <select name="categoria" class="form-control">
                         <option value="" hidden>Categoria</option>
-                        #{list items:categorias, as:'categoria'}
-                        <option value="${categoria?.id}" #{if categoria?.id==flash.categoria} selected #{/if}>${categoria?.getCategoria()}</option>
-                        #{/list}
+                    #{list items:categorias, as:'categoria'}
+                        <option value="${categoria?.id}" #{if categoria?.id==actividade?.getCategoria()?.id} selected #{/if}>${categoria?.getCategoria()}</option>
+                    #{/list}
                     </select>
                     <span class="text-danger">#{error 'categoria'/}</span>
                 </div>
@@ -39,15 +40,15 @@
                     <label for="estado">Estado <span class="text-danger">*</span></label>
                     <select name="estado" class="form-control">
                         <option value="" hidden>Estado</option>
-                        <option value="Concluída" #{if flash.estado=="Concluída"} selected #{/if}>Concluída</option>
-                        <option value="Não Concluída" #{if flash.estado == "Não Concluída"} selected #{/if}>Não Concluída</option>
+                        <option value="Concluída" #{if actividade?.estado=="Concluída"} selected #{/if}>Concluída</option>
+                        <option value="Não Concluída" #{if actividade?.estado == "Não Concluída"} selected #{/if}>Não Concluída</option>
                     </select>
                     <span class="text-danger">#{error 'estado'/}</span>
                 </div>
 
                 <div class="col-md-12 mb-2">
                     <label for="descricao">Descrição <span class="text-danger">*</span></label>
-                    <textarea name="descricao" id="" cols="30" rows="5" class="form-control" placeholder="Descrição">${flash.descricao}</textarea>
+                    <textarea name="descricao" id="" cols="30" rows="5" class="form-control" placeholder="Descrição">${actividade?.getDescricao()?:flash.descricao}</textarea>
                     <span class="text-danger">#{error 'descricao'/}</span>
                 </div>
 

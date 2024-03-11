@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4d1c45-16db-45d4-890d-e2d080025e23" name="Default Changelist" comment="" />
+    <list default="true" id="be4d1c45-16db-45d4-890d-e2d080025e23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/views/Actividades/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/Categorias/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/Actividades.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/Actividades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Actividades/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Actividades/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Actividades/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Actividades/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Application/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Application/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iws" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,6 +70,7 @@
       <workItem from="1709726045226" duration="15171000" />
       <workItem from="1709795805468" duration="964000" />
       <workItem from="1709796806959" duration="23888000" />
+      <workItem from="1710141591238" duration="3865000" />
     </task>
     <servers />
   </component>
@@ -88,6 +98,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="0" width="607" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1709802612157" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1710147605768">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1710147605768" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1709816241113">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
