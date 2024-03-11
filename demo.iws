@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4d1c45-16db-45d4-890d-e2d080025e23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/controllers/ActividadeControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iws" afterDir="false" />
-    </list>
+    <list default="true" id="be4d1c45-16db-45d4-890d-e2d080025e23" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +60,7 @@
       <workItem from="1709725870909" duration="144000" />
       <workItem from="1709726045226" duration="15171000" />
       <workItem from="1709795805468" duration="964000" />
-      <workItem from="1709796806959" duration="23706000" />
+      <workItem from="1709796806959" duration="23888000" />
     </task>
     <servers />
   </component>
